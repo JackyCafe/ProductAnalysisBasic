@@ -1,4 +1,6 @@
-class Observable:
+
+class Subject:
+
     def __init__(self):
         self.observers = []
 
@@ -8,6 +10,6 @@ class Observable:
     def remove_observer(self, observer):
         self.observers.remove(observer)
 
-    def notify(self):
+    def notify_all(self):
         for o in self.observers:
             o.update(self)
