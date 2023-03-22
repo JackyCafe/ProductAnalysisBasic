@@ -28,8 +28,8 @@ class CreateDB:
 
     @property
     def cols(self):
-        return self.df.columns.array
-
+        dataset = self.collection
+        return dataset.find_one({}).keys()
 
     def insert(self):
         if len(self) > 0:

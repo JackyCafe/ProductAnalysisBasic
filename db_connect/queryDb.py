@@ -49,6 +49,8 @@ class QueryDb(CreateDB):
             sum += float(x)
         return sum / count
 
+
+
     def __getitem__(self, position) -> dict:
         return self.datas[position]
 

@@ -1,6 +1,6 @@
 import math
 import numpy as np
-
+from matplotlib import  pyplot as plt
 from db_connect.queryDb import QueryDb
 
 
@@ -36,6 +36,15 @@ class SPC:
     @property
     def lcl(self) -> list:
         return self._lcl
+
+    def to_chart(self):
+        fig, axs = plt.subplots(1, figsize=(15, 15), sharex=True)
+        axs.plot(self._ucl, marker='o', color='red')
+        axs.plot(self.x_bar, marker='o', color='black')
+        axs.plot(self._lcl, marker='o', color='red')
+        axs.plot(self.param,marker='_',color = 'blue')
+        plt.show()
+
 
     def __len__(self):
         return len(self.param)

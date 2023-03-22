@@ -1,3 +1,10 @@
+''' 
+2023/3/22
+ProductAnalysisBasic 
+subject.py
+by yhlin
+'''
+
 
 class Subject:
 
